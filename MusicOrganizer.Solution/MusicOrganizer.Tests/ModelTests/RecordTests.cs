@@ -94,7 +94,7 @@ namespace MusicOrganizer.Tests
 
       List<Record> result = Record.GetAllByArtist("Jenny Hancock");
 
-      Assert.AreEqual(expected, result);
+      CollectionAssert.AreEqual(expected, result);
     }
   }
 }
