@@ -18,5 +18,19 @@ namespace MusicOrganizer.Controllers
     {
       return View();
     }
+
+    [HttpPost("/records")]
+    public ActionResult Create(string newRecord, string newArtist)
+    {
+      Record firstRecord = new Record(newRecord, newArtist);
+      return RedirectToAction("Index");
+    }
+
+    [HttpGet("/records/{artist}")]
+    public ActionResult Show(string artist)
+    {
+      List<Record> recordsByArtist = Record.GetAllByArtist(artist);
+      return View(recordsByArtist);
+    }
   }
 }

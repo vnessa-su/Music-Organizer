@@ -1,0 +1,11 @@
+<h1>Artist Records:</h1>
+
+<h2>@Model[0].Artist</h2>
+<ul>
+  @foreach (Record record in Model)
+  {
+    <li>@record.Title</li>
+  }
+</ul>
+<a href="/records/new">Add a new record</a>
+<a href="/records/">Go to artist list</a>

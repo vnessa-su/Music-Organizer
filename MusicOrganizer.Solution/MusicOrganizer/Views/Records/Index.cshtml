@@ -9,8 +9,6 @@
 
 @foreach (string artist in Model)
 {
-  <h3><a href="@Url.Action("Show", "Records", new {artistSelected = @artist})">@artist</a></h3>
+  <h3><a href='/records/@artist'>@artist</a></h3>
 }
 <a href="/records/new">Add a new record</a>
-
-<form action="/records/new" method="Get"
