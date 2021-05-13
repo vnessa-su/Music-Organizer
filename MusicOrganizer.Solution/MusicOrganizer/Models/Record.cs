@@ -66,5 +66,10 @@ namespace MusicOrganizer.Models
       // return allArtists;
       return _allArtists;
     }
+
+    public static void DeleteRecord(int recordId)
+    {
+      _recordsList.RemoveAt(recordId-1);
+    }
   }
 }

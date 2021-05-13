@@ -32,5 +32,12 @@ namespace MusicOrganizer.Controllers
       List<Record> recordsByArtist = Record.GetAllByArtist(artist);
       return View(recordsByArtist);
     }
+
+    [HttpPost("records/delete/{recordId}")]
+    public ActionResult Delete(int recordId)
+    {
+      record.DeleteRecord();
+      return ReDirectToAction("Index");
+    }
   }
 }
