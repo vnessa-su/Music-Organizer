@@ -59,8 +59,8 @@ namespace MusicOrganizer.Tests
 
       CollectionAssert.AreEqual(newList, result);
     }
-    [TestMethod]
 
+    [TestMethod]
     public void Find_ReturnsAccurateRecord_Record()
     {
       string recordTitle1 = "Thrust";
@@ -74,6 +74,27 @@ namespace MusicOrganizer.Tests
       Record result = Record.Find(2);
 
       Assert.AreEqual(newRecord2, result);
+    }
+
+    [TestMethod]
+    public void GetAllByArtist_JennyHancock_TwoRecords()
+    {
+      string recordTitle1 = "Thrust";
+      string recordArtist = "Herbie Hancock";
+      string recordTitle2 = "Save Me";
+      string recordArtist2 = "Jenny Hancock";
+      string recordTitle3 = "Save Me Again";
+      string recordArtist3 = "Jenny Hancock";
+
+      Record newRecord1 = new Record(recordTitle1, recordArtist);
+      Record newRecord2 = new Record(recordTitle2, recordArtist2);
+      Record newRecord3 = new Record(recordTitle3, recordArtist3);
+
+      List<Record> expected = new List<Record> { newRecord2, newRecord3 };
+
+      List<Record> result = Record.GetAllByArtist("Jenny Hancock");
+
+      Assert.AreEqual(expected, result);
     }
   }
 }
