@@ -1,7 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ProjectName;
+using MusicOrganizer;
 
-namespace ProjectName.Tests //Change to match Title
+namespace MusicOrganizer.Tests //Change to match Title
 {
   [TestClass]
   public class ClassNameTests

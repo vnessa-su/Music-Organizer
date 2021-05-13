@@ -1,4 +1,4 @@
-namespace ProjectName
+namespace MusicOrganizer
 {
   public class ClassName
   {
