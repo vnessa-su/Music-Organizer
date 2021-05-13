@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MusicOrganizer.Controllers
 {
-  public class HomeController : Controllers
+  public class HomeController : Controller
   {
     [HttpGet("/")]
     public ActionResult Index()
