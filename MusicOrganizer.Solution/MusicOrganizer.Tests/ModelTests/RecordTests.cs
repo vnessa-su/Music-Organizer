@@ -16,7 +16,7 @@ namespace MusicOrganizer.Tests
     [TestMethod]
     public void RecordConstructor_CreateInstanceOfRecord_Record()
     {
-      Record newRecord = new Record("Thrust");
+      Record newRecord = new Record("Thrust", "Herbie Hancock");
       Assert.AreEqual(typeof(Record), newRecord.GetType());
     }
 
@@ -24,8 +24,9 @@ namespace MusicOrganizer.Tests
     public void GetRecordTitle_ReturnRecordTitle_String()
     {
       string recordTitle = "Thrust";
+      string recordArtist = "Herbie Hancock";
 
-      Record newRecord = new Record(recordTitle);
+      Record newRecord = new Record(recordTitle, recordArtist);
       string result = newRecord.Title;
 
       Assert.AreEqual(recordTitle, result);
@@ -46,9 +47,12 @@ namespace MusicOrganizer.Tests
     public void GetAll_ReturnsRecords_recordTitles()
     {
       string recordTitle1 = "Thrust";
+      string recordArtist = "Herbie Hancock";
       string recordTitle2 = "Save Me";
-      Record newRecord1 = new Record(recordTitle1);
-      Record newRecord2 = new Record(recordTitle2);
+      string recordArtist2 = "Jenny Hancock";
+
+      Record newRecord1 = new Record(recordTitle1, recordArtist);
+      Record newRecord2 = new Record(recordTitle2, recordArtist2);
       List<Record> newList = new List<Record> { newRecord1, newRecord2 };
 
       List<Record> result = Record.GetAll();
@@ -59,7 +63,17 @@ namespace MusicOrganizer.Tests
 
     public void Find_ReturnsAccurateRecord_Record()
     {
-      
+      string recordTitle1 = "Thrust";
+      string recordArtist = "Herbie Hancock";
+      string recordTitle2 = "Save Me";
+      string recordArtist2 = "Jenny Hancock";
+
+      Record newRecord1 = new Record(recordTitle1, recordArtist);
+      Record newRecord2 = new Record(recordTitle2, recordArtist2);
+
+      Record result = Record.Find(2);
+
+      Assert.AreEqual(newRecord2, result);
     }
   }
 }
