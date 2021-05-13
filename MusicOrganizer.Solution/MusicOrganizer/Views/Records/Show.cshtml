@@ -5,7 +5,7 @@
 <ul>
   @foreach (Record record in Model)
   {
-    <li>@record.Title</li>
+    <li>@record.Title <a href="/records/delete/@record.Id">[DELETE]</a></li>
   }
 </ul>
 <a href="/records/new">Add a new record</a>

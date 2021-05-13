@@ -36,8 +36,8 @@ namespace MusicOrganizer.Controllers
     [HttpPost("records/delete/{recordId}")]
     public ActionResult Delete(int recordId)
     {
-      record.DeleteRecord();
-      return ReDirectToAction("Index");
+      Record.DeleteRecord(recordId);
+      return RedirectToAction("Index");
     }
   }
 }
