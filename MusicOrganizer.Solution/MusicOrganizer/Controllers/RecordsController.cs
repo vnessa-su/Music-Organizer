@@ -23,6 +23,7 @@ namespace MusicOrganizer.Controllers
     public ActionResult Create(string newRecord, string newArtist)
     {
       Record firstRecord = new Record(newRecord, newArtist);
+      firstRecord.Save();
       return RedirectToAction("Index");
     }
 
